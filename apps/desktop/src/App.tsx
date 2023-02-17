@@ -1,25 +1,19 @@
+import { Route, Routes } from '@solidjs/router';
 import type { Component } from 'solid-js';
+import { MenuBar } from './components';
+import { Budgets, Expenses, Home, Incomes } from './pages'
+import { RoutePaths } from './utils';
 
-import logo from './logo.svg';
-import styles from './App.module.css';
-
-const App: Component = () => {
+const App:Component = () => {
   return (
-    <div class={styles.App}>
-      <header class={styles.header}>
-        <img src={logo} class={styles.logo} alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          class={styles.link}
-          href="https://github.com/solidjs/solid"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Solid
-        </a>
-      </header>
+    <div>
+      <MenuBar/>
+    <Routes>
+      <Route path={RoutePaths.HOME} component={Home} />
+      <Route path={RoutePaths.EXPENSES} component={Expenses} />
+      <Route path={RoutePaths.INCOMES} component={Incomes} />
+      <Route path={RoutePaths.BUDGETS} component={Budgets} />
+    </Routes>
     </div>
   );
 };

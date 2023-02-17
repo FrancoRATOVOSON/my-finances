@@ -2,19 +2,19 @@
   "name": "eslint-config-custom",
   "version": "0.0.0",
   "main": "index.js",
-  "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.51.0",
+    "@typescript-eslint/parser": "^5.51.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-config-turbo": "^0.0.7",
-    "eslint-plugin-react": "^7.32.2"
+    "eslint-plugin-prettier": "^4.2.1"
   },
   "devDependencies": {
     "eslint": "^8.34.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "prettier": "latest",
     "typescript": "^4.9.5"
   }
 }
