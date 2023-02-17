@@ -17,3 +17,7 @@
 html {
   @apply text-black bg-gray text-base font-raleway;
 }
+
+html, body, #root {
+  @apply w-full h-full;
+}

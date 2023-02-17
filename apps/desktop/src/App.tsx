@@ -6,7 +6,7 @@ import { RoutePaths } from './utils';
 
 const App:Component = () => {
   return (
-    <div>
+    <div class='flex w-full h-full'>
       <MenuBar/>
     <Routes>
       <Route path={RoutePaths.HOME} component={Home} />
