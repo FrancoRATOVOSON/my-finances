@@ -1,0 +1,30 @@
+{
+  "name": "mock",
+  "version": "0.0.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "clean": "rm -rf dist",
+    "dev": "tsup src/index.ts --format esm,cjs --watch --dts",
+    "lint": "eslint \"src/**/*.ts*\""
+  },
+  "dependencies": {
+    "utils": "workspace:*"
+  },
+  "devDependencies": {
+    "eslint": "^8.34.0",
+    "eslint-config-custom": "workspace:*",
+    "prettier": "latest",
+    "tsconfig": "workspace:*",
+    "tsup": "^6.6.3",
+    "typescript": "^4.9.5"
+  }
+}
