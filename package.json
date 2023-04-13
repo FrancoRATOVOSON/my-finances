@@ -7,7 +7,9 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
-    "lint": "turbo run lint"
+    "lint": "turbo run lint",
+    "web": "turbo run dev --filter=desktop",
+    "mobile": "turbo run start --filter=mobile"
   },
   "devDependencies": {
     "eslint": "^8.34.0",
