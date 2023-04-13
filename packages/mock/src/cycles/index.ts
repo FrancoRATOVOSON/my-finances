@@ -1,4 +1,3 @@
-
 import { Cycle, CycleInterval as CI, ExpensesTags, getCurrentMonthYear, getMonthCycleInterval, getSimpleCycleLabel, IncomesTags, subMonth } from "utils";
 import { expensesFactory } from "../expenses";
 import { incomesFactory } from "../incomes";
@@ -47,21 +46,19 @@ export function cycleIntervalFactory(startedAt:Date):CycleInterval {
   }
 }
 
-export function cycleIntervalsFactory(count:number=10):CycleInterval[] {
-  const cycles:CycleInterval[] = []
+export function cycleIntervalsFactory(count:number=12):CycleInterval[] {
   let currentDate = new Date()
+  const cycles:CycleInterval[] = [cycleIntervalFactory(currentDate)]
 
-  for (let i = 0; i < count; i++) {
-    currentDate = subMonth(currentDate, i)
-    cycles.push(cycleIntervalFactory(currentDate))
-  }
+  for (let i = 0; i < count; i++)
+    cycles.push(cycleIntervalFactory(subMonth(currentDate, i)))
 
   return cycles
 }
 
 export function cyclesFactory(
   {budgets, incomesTags, expensesTags}: CyclesFactoryParams,
-  count:number=10
+  count:number=12
 ):Cycle[] {
   return cycleIntervalsFactory(count).map(cycle => ({
     ...cycle,
