@@ -1,14 +1,21 @@
-import { SvgProps } from "react-native-svg"
 import { RouteLabels } from "../../../utils"
-import { HomeActive, HomeInactive } from "./icons/home"
-import { ExpensesActive, ExpensesInactive } from "./icons/expenses"
-import { IncomesActive, IncomesInactive } from "./icons/incomes"
-import { BudgetsActive, BudgetsInactive } from "./icons/budgets"
-import { GoalsActive, GoalsInactive } from "./icons/goals"
+import { SVGIcon } from "../../../../utils"
+import {
+  BudgetsActive,
+  BudgetsInactive,
+  ExpensesActive,
+  ExpensesInactive,
+  GoalsActive,
+  GoalsInactive,
+  HomeActive,
+  HomeInactive,
+  IncomesActive,
+  IncomesInactive
+} from "../../../../assets/navIcons"
 
 export interface NavIconType {
-  Active: React.FC<SvgProps>,
-  Inactive: React.FC<SvgProps>
+  Active: SVGIcon,
+  Inactive: SVGIcon
 }
 
 type NavElement = Record<RouteLabels,NavIconType>

@@ -12,11 +12,13 @@ export default function NavBar({state, navigation}:BottomTabBarProps) {
     <View
       style={{
         marginBottom: inset.bottom,
-        paddingVertical: 8,
+        paddingVertical: 4,
         width: '100%',
         display: "flex",
         flexDirection: "row",
-        justifyContent: "space-evenly"
+        justifyContent: "space-evenly",
+        borderTopColor: '#333333',
+        borderTopWidth: 0.5
       }}
     >
       {

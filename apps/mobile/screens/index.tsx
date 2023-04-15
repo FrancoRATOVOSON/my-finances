@@ -1,15 +1,10 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import React from 'react'
-import { NavBar, RouteLabels } from '../navigation'
+import { NavBar, RouteLabels, Tab } from '../navigation'
 import Home from './Home'
 import Expenses from './Expenses'
 import Incomes from './Incomes'
 import Budgets from './Budgets'
 import Goals from './Goals'
-
-type ButtomTabNavigatorType = Record<RouteLabels, object | undefined>
-
-const Tab = createBottomTabNavigator<ButtomTabNavigatorType>()
 
 export function Screens() {
   return (
