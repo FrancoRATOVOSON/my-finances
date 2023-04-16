@@ -1,8 +1,9 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import { CardMenu } from './components'
+import { BudgetCard, CardMenu, Carousel } from './components'
 import { HomeSreenProps, RouteLabels } from '../../navigation'
 import { BudgetsInactive, ExpensesInactive, GoalsInactive, IncomesInactive } from '../../assets/navIcons'
+import { Button } from '../../components'
 
 interface HomeProps extends HomeSreenProps {}
 
@@ -18,9 +19,29 @@ export default function Home({ navigation }: HomeProps) {
       <View
         style={{
           height: '50%',
+          paddingHorizontal: 24,
+          paddingVertical: 32,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'space-between'
         }}
       >
-        <Text>Top</Text>
+        <View>
+          <BudgetCard/>
+        </View>
+        <View
+          style={{
+            // width: '100%',
+            paddingHorizontal: 24,
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            columnGap: 24
+          }}
+        >
+          <Button style={{ width: '50%' }} level='Secondary' label='New expense' />
+          <Button style={{ width: '50%' }} level='Secondary' label='New income' />
+        </View>
       </View>
       <View
         style={{
